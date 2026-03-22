@@ -2,7 +2,7 @@
 #define WAVE_GENERATOR_HPP
 
 #include <vector>
-#include "point.hpp"
+#include "Point.hpp"
 
 class WaveGenerator {
   public:

@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "point.hpp"
+#include "Point.hpp"
 
 class ObjExporter {
   public: 
