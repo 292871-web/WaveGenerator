@@ -1,0 +1,3 @@
+/home/admin/Documents/Projekty/Praca/Portfolio2026/Assets/build/CMakeFiles/WaveGenerator.dir
+/home/admin/Documents/Projekty/Praca/Portfolio2026/Assets/build/CMakeFiles/edit_cache.dir
+/home/admin/Documents/Projekty/Praca/Portfolio2026/Assets/build/CMakeFiles/rebuild_cache.dir
