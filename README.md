@@ -1,0 +1,2 @@
+# WaveGenerator
+Project for fun
