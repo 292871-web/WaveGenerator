@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/WaveGenerator.dir/link.d CMakeFiles/WaveGenerator.dir/main.cpp.o CMakeFiles/WaveGenerator.dir/ObjExporter.cpp.o CMakeFiles/WaveGenerator.dir/WaveGenerator.cpp.o -o WaveGenerator
