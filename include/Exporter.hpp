@@ -1,5 +1,5 @@
-#ifndef CSV_EXPORTER_HPP
-#define CSV_EXPORTER_HPP
+#ifndef EXPORTER_HPP
+#define EXPORTER_HPP
 
 #include <string>
 #include <vector>
@@ -8,6 +8,10 @@
 class CsvExporter {
   public: 
     void save(const std::string& filename, const std::vector<AdvPoint>& coordinates, int gridPoints);
+};
+class BinExporter {
+  public: 
+    void save(const std::string& filename, const std::vector<AdvPoint>& coordinates);
 };
 
 #endif

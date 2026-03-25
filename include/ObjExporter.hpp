@@ -10,4 +10,5 @@ class ObjExporter {
     void save(const std::string& filename, const std::vector<Point>& points, int gridPoints);
 };
 
+
 #endif

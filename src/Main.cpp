@@ -1,6 +1,6 @@
 #include "../include/WaveGenerator.hpp"
 #include "../include/ObjExporter.hpp"
-#include "../include/CsvExporter.hpp"
+#include "../include/Exporter.hpp"
 #include "../include/CLI11.hpp"
 #include <string>
 
@@ -18,18 +18,23 @@ int main(int argc, char **argv) {
     app.add_option("-t,--timeResolution", timeResolution, "How accurate the time between animation's frames will be");
     app.add_option("-m,--timeMax", timeMax, "How long the animation will be");
     CLI11_PARSE(app, argc, argv);
-    if (program = 'o') {
-    WaveGenerator generator(resolution, sizeBox);
-    auto points = generator.generateCoordinates();
-    
-    ObjExporter exporter;
-    exporter.save("../output/QuantumWave.obj", points, resolution);
-    } else if (program = 'a') {
-    AdvWaveGenerator generator(resolution, sizeBox, timeMax, timeResolution);
-    auto coordinates = generator.AdvGenerateCoordinates();
-    
-    CsvExporter exporter;
-    exporter.save("../output/QuantumWave.csv", coordinates, resolution);
+    //#debugging std::cout << "Wybrano format: " << program << "\n";
+    if (program == 'o') {
+      WaveGenerator generator(resolution, sizeBox);
+      auto points = generator.generateCoordinates();
+      
+      ObjExporter exporter;
+      exporter.save("../output/QuantumWave.obj", points, resolution);
+    } else if (program == 'a') {
+    // std::cout << "Wybrano format: " << program << "\n";
+      AdvWaveGenerator generator(resolution, sizeBox, timeMax, timeResolution);
+      auto coordinates = generator.AdvGenerateCoordinates();
+      
+     CsvExporter csvExporter;
+     csvExporter.save("../output/QuantumWave.csv", coordinates, resolution);
+      
+      BinExporter binExporter;
+      binExporter.save("../output/QuantumWave.bin", coordinates);
     }
     return 0;
 }
