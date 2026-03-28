@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np   
 import math
 
-data = np.loadtxt("../output/QuantumWave.csv", delimiter=",", skiprows=1)
+data = np.fromfile("../output/bin/QuantumWave.bin",dtype=float,)
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 

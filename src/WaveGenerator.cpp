@@ -2,12 +2,13 @@
 #include <iostream>
 #include <iomanip>
 #include "../include/WaveGenerator.hpp"
-
+#include <omp.h>
 WaveGenerator::WaveGenerator(int grid_var, float boxSize) : m_gridPoints(grid_var), m_boxSize(boxSize){}
 
 std::vector<Point> WaveGenerator::generateCoordinates() {
   std::vector<Point> points;
   float stepSize = m_boxSize/static_cast<float>(m_gridPoints - 1);
+  #pragma omp parallel for
   for (int i = 0; i<m_gridPoints; i++){
       for (int n = 0; n<m_gridPoints; n++){
         Point p;
@@ -28,7 +29,9 @@ std::vector<AdvPoint> AdvWaveGenerator::AdvGenerateCoordinates() {
   std::vector<AdvPoint> coordinates;
   float stepSize = m_boxSize/static_cast<float>(m_gridPoints - 1);
   int w = 1;
+  
   for (float t = 0.0f; t <= m_timeMax; t+= m_timeResolution){
+  #pragma omp parallel for
     for (int i = 0; i<m_gridPoints; i++){
         for (int n = 0; n<m_gridPoints; n++){
           AdvPoint c;
